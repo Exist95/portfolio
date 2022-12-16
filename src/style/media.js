@@ -14,8 +14,4 @@ const media = {
   phone: `screen and (max-width: ${sizes.phone})`,
 };
 
-const hover = {
-  title: "#2e64d1",
-};
-
-export { sizes, media, hover };
+export { sizes, media };

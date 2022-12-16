@@ -2,17 +2,46 @@ import React from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 
-const Navi = () => {
+const Navi = ({ oneClick, twoClick, threeClick, one, two, three }) => {
   return (
     <NaviContainer>
       <StNavigation>
         <NaviItem>
-          <HashLink smooth to="/#home">
-            About
+          <HashLink
+            smooth
+            to="/#home"
+            style={{ textDecoration: "none" }}
+            onClick={oneClick}
+          >
+            <span style={one ? { color: "white" } : { color: "black" }}>
+              About
+            </span>
           </HashLink>
         </NaviItem>
-        <NaviItem>Project</NaviItem>
-        <NaviItem>Contact</NaviItem>
+        <NaviItem>
+          <HashLink
+            smooth
+            to="/#project"
+            style={{ textDecoration: "none", color: "black" }}
+            onClick={twoClick}
+          >
+            <span style={two ? { color: "white" } : { color: "black" }}>
+              Project
+            </span>
+          </HashLink>
+        </NaviItem>
+        <NaviItem>
+          <HashLink
+            smooth
+            to="/#contact"
+            style={{ textDecoration: "none", color: "black" }}
+            onClick={threeClick}
+          >
+            <span style={three ? { color: "white" } : { color: "black" }}>
+              Contact
+            </span>
+          </HashLink>
+        </NaviItem>
       </StNavigation>
     </NaviContainer>
   );
@@ -44,9 +73,6 @@ const StNavigation = styled.ul`
 `;
 
 const NaviItem = styled.li`
-  &:hover {
-    color: ${({ theme }) => theme.title};
-  }
   @media ${({ theme }) => theme.laptop} {
     padding-top: 5px;
   }

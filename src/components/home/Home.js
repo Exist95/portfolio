@@ -2,14 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import ContactSection from "./ContactSection";
 import HomeSection from "./HomeSection";
-import IntroduceSection from "./IntroduceSection";
 import ProjectSection from "./ProjectSection";
 
 const Home = () => {
   return (
     <MainContainer>
       <HomeSection />
-      <IntroduceSection />
       <ProjectSection />
       <ContactSection />
     </MainContainer>

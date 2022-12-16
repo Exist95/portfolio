@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navi from "./Navi";
 
 const Header = () => {
+  const [one, setOne] = useState(true);
+  const [two, setTwo] = useState(false);
+  const [three, setThree] = useState(false);
+
+  const oneClick = () => {
+    setOne(true);
+    setTwo(false);
+    setThree(false);
+  };
+  const twoClick = () => {
+    setOne(false);
+    setTwo(true);
+    setThree(false);
+  };
+  const threeClick = () => {
+    setOne(false);
+    setTwo(false);
+    setThree(true);
+  };
+
   return (
     <HeaderContainer>
-      <Name>JY Noh, Portfolio</Name>
-      <Navi />
+      <Name>
+        Noh's Portfolio<span>{" with 2023 Color"}</span>
+      </Name>
+      <Navi
+        oneClick={oneClick}
+        twoClick={twoClick}
+        threeClick={threeClick}
+        one={one}
+        two={two}
+        three={three}
+      />
     </HeaderContainer>
   );
 };
@@ -26,7 +55,7 @@ const HeaderContainer = styled.header`
   font-size: 20px;
   font-weight: 900;
   padding-bottom: 36px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 
   @media ${({ theme }) => theme.laptop} {
     font-size: 2.5rem;
@@ -44,8 +73,20 @@ const HeaderContainer = styled.header`
 `;
 
 const Name = styled.h1`
-  &:hover {
-    color: ${({ theme }) => theme.title};
+  color: black;
+  > span {
+    font-size: 1rem;
+    @media ${({ theme }) => theme.laptop} {
+      font-size: 1rem;
+    }
+
+    @media ${({ theme }) => theme.mobile} {
+      display: none;
+    }
+
+    @media ${({ theme }) => theme.phone} {
+      display: none;
+    }
   }
 `;
 
