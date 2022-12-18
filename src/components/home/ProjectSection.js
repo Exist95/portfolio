@@ -7,7 +7,6 @@ const ProjectSection = () => {
     <SectionWrapper id="project">
       <ProjectBackground>
         <ProjectHead>Project</ProjectHead>
-        <TextFooter></TextFooter>
       </ProjectBackground>
     </SectionWrapper>
   );
@@ -40,32 +39,7 @@ const ProjectHead = styled.h2`
 const ProjectBackground = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: #bc2649;
-`;
-
-const TextFooter = styled.div`
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-bottom: 0.5rem;
-  font-size: 4rem;
-  font-weight: 900;
-  @media ${({ theme }) => theme.laptop} {
-    font-size: 3rem;
-  }
-
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 2rem;
-  }
-
-  @media ${({ theme }) => theme.mobile} {
-    font-size: 1rem;
-  }
-
-  @media ${({ theme }) => theme.mobile} {
-    font-size: 1rem;
-  }
+  background-color: #bc2749;
 `;
 
 export default ProjectSection;

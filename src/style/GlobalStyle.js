@@ -18,8 +18,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 10px;
     font-style: normal;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-snap-type: y proximity;
     overflow-y: hidden;
     overflow-x: hidden;
+
   }
 `;
 

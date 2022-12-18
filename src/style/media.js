@@ -4,6 +4,7 @@ const sizes = {
   tablet: "1024px",
   mobile: "768px",
   phone: "480px",
+  height: "500px",
 };
 
 const media = {
@@ -12,6 +13,7 @@ const media = {
   tablet: `screen and (max-width: ${sizes.tablet})`,
   mobile: `screen and (max-width: ${sizes.mobile})`,
   phone: `screen and (max-width: ${sizes.phone})`,
+  height: `screen and (max-height: ${sizes.height})`,
 };
 
 export { sizes, media };
