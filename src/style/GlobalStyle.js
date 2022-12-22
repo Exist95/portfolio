@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -21,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
     scroll-snap-type: y proximity;
     overflow-y: hidden;
     overflow-x: hidden;
-
   }
+
 `;
 
 export default GlobalStyle;

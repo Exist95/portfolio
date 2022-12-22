@@ -1,41 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Navi from "./Navi";
 
 const Header = () => {
-  const [one, setOne] = useState(true);
-  const [two, setTwo] = useState(false);
-  const [three, setThree] = useState(false);
-
-  const oneClick = () => {
-    setOne(true);
-    setTwo(false);
-    setThree(false);
-  };
-  const twoClick = () => {
-    setOne(false);
-    setTwo(true);
-    setThree(false);
-  };
-  const threeClick = () => {
-    setOne(false);
-    setTwo(false);
-    setThree(true);
-  };
-
   return (
     <HeaderContainer>
-      <Name>
-        Noh's Portfolio<span>{" with 2023 Color"}</span>
-      </Name>
-      <Navi
-        oneClick={oneClick}
-        twoClick={twoClick}
-        threeClick={threeClick}
-        one={one}
-        two={two}
-        three={three}
-      />
+      <Name>JongYeol - Portfolio</Name>
+      <Navi />
     </HeaderContainer>
   );
 };
@@ -51,7 +22,7 @@ const HeaderContainer = styled.header`
   padding: 3rem;
   margin: 0 auto;
   width: 100%;
-  height: 6rem;
+  height: 10rem;
   font-size: 20px;
   font-weight: 900;
   padding-bottom: 36px;
@@ -70,9 +41,14 @@ const HeaderContainer = styled.header`
     font-size: 2rem;
     margin-top: 5px;
   }
+  @media ${({ theme }) => theme.height} {
+    display: none;
+  }
 `;
 
 const Name = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 10px;
   color: black;
   > span {
     font-size: 1rem;

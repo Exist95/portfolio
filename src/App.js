@@ -3,7 +3,6 @@ import Header from "./components/global/Header";
 import { media } from "./style/media";
 import GlobalStyle from "./style/GlobalStyle";
 import HomePage from "./pages/HomePage";
-import Footer from "./components/global/Footer";
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <GlobalStyle />
       <Header />
       <HomePage />
-      <Footer />
     </ThemeProvider>
   );
 }

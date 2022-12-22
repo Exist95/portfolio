@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SectionWrapper from "../global/SectionWrapper";
-import { TextFooter } from "../global/TextFooter";
 
 const HomeSection = () => {
+  //intro, stack 모달창 구현 (지역상태관리)
+
   return (
     <SectionWrapper id="home">
       <HomeBackground>
-        <TextBox>
-          <div style={{ padding: "0px" }}>
-            <div>Front Developer-</div>
-          </div>
-          <div style={{ padding: "00px" }}>
-            <div>JongYeol,</div>
-            <div style={{ paddingTop: "5px" }}>Noh</div>
+        <ImageBox />
+        <TextBox style={{ marginLeft: "5px" }}>
+          <div>Introduce</div>
+          <div>Stack</div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <span
+              style={{
+                marginLeft: "10px",
+              }}
+            >
+              Front-End
+            </span>
+            <div>JongYeol, Noh</div>
           </div>
         </TextBox>
       </HomeBackground>
@@ -23,45 +35,92 @@ const HomeSection = () => {
 
 const HomeBackground = styled.div`
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #a6cae5;
+  background-color: #e6e6fa;
 `;
 
 const TextBox = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-flow: column nowrap;
-  color: white;
-  font-size: 7rem;
-  font-weight: 900;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  font-size: 6rem;
+  font-weight: 800;
   font-style: normal;
-  border: 5px solid white;
-  width: 47rem;
-  height: 47rem;
+  border: 5px solid black;
+  width: 35rem;
+  height: 35rem;
   padding-left: 5px;
-
+  margin-right: 10px;
+  > :nth-child(3) {
+    > div {
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      @media ${({ theme }) => theme.height} {
+        font-size: 2rem;
+      }
+    }
+  }
+  > :nth-child(n) {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+  }
+  span {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    @media ${({ theme }) => theme.tablet} {
+      font-size: 2rem;
+    }
+    @media ${({ theme }) => theme.mobile} {
+      font-size: 1.5rem;
+    }
+    @media ${({ theme }) => theme.height} {
+      font-size: 1rem;
+    }
+  }
   @media ${({ theme }) => theme.laptop} {
     font-size: 6rem;
-    width: 45rem;
-    height: 45rem;
-  }
-
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 6rem;
-    width: 40rem;
-    height: 40rem;
-  }
-
-  @media ${({ theme }) => theme.mobile} {
-    font-size: 5rem;
     width: 35rem;
     height: 35rem;
   }
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 6rem;
+    width: 35rem;
+    height: 35rem;
+  }
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 5.5rem;
+    width: 35rem;
+    height: 35rem;
+  }
+  @media ${({ theme }) => theme.height} {
+    width: 20rem;
+    height: 20rem;
+    font-size: 3rem;
+  }
+`;
 
+const ImageBox = styled.div`
+  display: flex;
+  width: 35rem;
+  height: 35rem;
+  background-image: url("/images/Pic.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  @media ${({ theme }) => theme.phone} {
+    display: none;
+  }
   @media ${({ theme }) => theme.height} {
     width: 20rem;
     height: 20rem;

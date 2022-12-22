@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 
-const Navi = ({ oneClick, twoClick, threeClick, one, two, three }) => {
+const Navi = () => {
   return (
     <NaviContainer>
       <StNavigation>
@@ -10,12 +10,9 @@ const Navi = ({ oneClick, twoClick, threeClick, one, two, three }) => {
           <HashLink
             smooth
             to="/#home"
-            style={{ textDecoration: "none" }}
-            onClick={oneClick}
+            style={{ textDecoration: "none", color: "black" }}
           >
-            <span style={one ? { color: "white" } : { color: "black" }}>
-              About
-            </span>
+            <Tag>About</Tag>
           </HashLink>
         </NaviItem>
         <NaviItem>
@@ -23,11 +20,8 @@ const Navi = ({ oneClick, twoClick, threeClick, one, two, three }) => {
             smooth
             to="/#project"
             style={{ textDecoration: "none", color: "black" }}
-            onClick={twoClick}
           >
-            <span style={two ? { color: "white" } : { color: "black" }}>
-              Project
-            </span>
+            <Tag>Project</Tag>
           </HashLink>
         </NaviItem>
         <NaviItem>
@@ -35,11 +29,8 @@ const Navi = ({ oneClick, twoClick, threeClick, one, two, three }) => {
             smooth
             to="/#contact"
             style={{ textDecoration: "none", color: "black" }}
-            onClick={threeClick}
           >
-            <span style={three ? { color: "white" } : { color: "black" }}>
-              Contact
-            </span>
+            <Tag>Contact</Tag>
           </HashLink>
         </NaviItem>
       </StNavigation>
@@ -54,7 +45,7 @@ const NaviContainer = styled.nav`
 const StNavigation = styled.ul`
   display: flex;
   align-items: center;
-  column-gap: 3rem;
+  column-gap: 5rem;
   font-size: 3rem;
   font-weight: 900;
 
@@ -73,11 +64,22 @@ const StNavigation = styled.ul`
 `;
 
 const NaviItem = styled.li`
+  :nth-child(n) {
+    text-decoration: none;
+    color: black;
+  }
+
   @media ${({ theme }) => theme.laptop} {
     padding-top: 5px;
   }
   @media ${({ theme }) => theme.mobile} {
     padding-top: 3px;
+  }
+`;
+
+const Tag = styled.div`
+  &:hover {
+    color: white;
   }
 `;
 

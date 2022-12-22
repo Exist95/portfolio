@@ -4,7 +4,7 @@ const sizes = {
   tablet: "1024px",
   mobile: "768px",
   phone: "480px",
-  height: "500px",
+  height: "600px",
 };
 
 const media = {
