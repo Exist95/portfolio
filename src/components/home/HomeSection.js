@@ -40,7 +40,8 @@ const HomeBackground = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #e6e6fa;
+  background-color: #fbd7d5;
+  background: linear-gradient(#8f8a8e, #cac2d1, #fad4d2, #fdded7, #fae5d5);
 `;
 
 const TextBox = styled.div`

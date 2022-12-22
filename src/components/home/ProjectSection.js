@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SectionWrapper from "../global/SectionWrapper";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ProjectItem from "./ProjectItem";
 
 const ProjectSection = () => {
   const item = [
@@ -12,109 +10,90 @@ const ProjectSection = () => {
     { id: 3, project: "portfolio", url: "/images/paldo.png" },
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-  };
-
   return (
     <SectionWrapper id="project">
       <ProjectBackground>
-        <Contain>
-          <StyledSlider {...settings}>
-            {item.map((item) => {
-              return (
-                <ItemBox key={item.id}>
-                  <ImageContainer>
-                    <Image src={item.url} alt="이미지" />
-                    <Nametag>Detail</Nametag>
-                  </ImageContainer>
-                </ItemBox>
-              );
-            })}
-          </StyledSlider>
-        </Contain>
+        <Heading />
+        <ProjectBox>
+          {item.map(({ project, url }, index) => {
+            return (
+              <ProjectItem
+                key={index}
+                project={project}
+                url={url}
+                index={index}
+              ></ProjectItem>
+            );
+          })}
+        </ProjectBox>
       </ProjectBackground>
     </SectionWrapper>
   );
 };
 
+const Heading = styled.h2`
+  display: flex;
+  justify-content: center;
+  padding: 9rem 3rem 3rem 3rem;
+  font-size: 8rem;
+  font-weight: 900;
+  background-image: url("/images/myproject.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 20rem;
+  height: 20rem;
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 8rem;
+  }
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 5rem;
+  }
+  @media ${({ theme }) => theme.mobile} {
+    padding: 7rem 1.5rem 0rem 1.5rem;
+    font-size: 4rem;
+  }
+  @media ${({ theme }) => theme.phone} {
+    padding: 5rem 1.5rem 0rem 1.5rem;
+  }
+  @media ${({ theme }) => theme.height} {
+    width: 250px;
+    height: 250px;
+  }
+`;
+
 const ProjectBackground = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   background-color: #e6e6fa;
 `;
 
-const Contain = styled.div`
+const ProjectBox = styled.ul`
+  width: 70%;
+  padding: 3rem;
+  margin-top: 3rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: black;
-  font-size: 6rem;
-  font-weight: 800;
-  font-style: normal;
-`;
-
-const StyledSlider = styled(Slider)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 30rem;
-`;
-
-const ImageContainer = styled.div`
-  margin: 0 16px;
-  width: 100%;
-`;
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  background-size: cover;
-  margin: 0 auto;
-`;
-
-const ItemBox = styled.div`
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
   align-items: center;
-`;
-
-const Nametag = styled.button`
-  font-size: 2rem;
-  margin-top: 1rem;
-  display: flex;
-  margin: 0 auto;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const ProjectHead = styled.h2`
-  font-size: 9rem;
-  font-weight: 900;
-
+  justify-content: flex-start;
+  row-gap: 3rem;
+  column-gap: 3rem;
   @media ${({ theme }) => theme.laptop} {
-    font-size: 9rem;
+    width: 60%;
+    padding: 1.5rem;
   }
-
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 6rem;
-  }
-
   @media ${({ theme }) => theme.mobile} {
-    padding: 7rem 1.5rem 1.5rem 1.5rem;
-    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 1.5rem;
   }
-
   @media ${({ theme }) => theme.phone} {
-    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    display: none;
   }
 `;
 

@@ -12,7 +12,7 @@ const Navi = () => {
             to="/#home"
             style={{ textDecoration: "none", color: "black" }}
           >
-            <Tag>About</Tag>
+            <Tag>About_me</Tag>
           </HashLink>
         </NaviItem>
         <NaviItem>
@@ -68,7 +68,6 @@ const NaviItem = styled.li`
     text-decoration: none;
     color: black;
   }
-
   @media ${({ theme }) => theme.laptop} {
     padding-top: 5px;
   }
