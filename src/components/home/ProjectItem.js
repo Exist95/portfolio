@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const ProjectItem = ({ project, url }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -13,7 +14,9 @@ const ProjectItem = ({ project, url }) => {
         {isHovering && (
           <>
             <HoverCover />
-            <TextBox>Detail</TextBox>
+            <NavLink to={`/${project.toUpperCase()}`}>
+              <TextBox>Detail</TextBox>
+            </NavLink>
           </>
         )}
         <Image src={url} alt={project} />

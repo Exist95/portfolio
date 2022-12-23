@@ -95,6 +95,9 @@ const ProjectBox = styled.ul`
   @media ${({ theme }) => theme.phone} {
     display: none;
   }
+  @media ${({ theme }) => theme.height} {
+    display: none;
+  }
 `;
 
 export default ProjectSection;
