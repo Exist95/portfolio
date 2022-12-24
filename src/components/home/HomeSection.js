@@ -1,34 +1,57 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SectionWrapper from "../global/SectionWrapper";
+import IntroModal from "../modal/IntroModal";
+import StackModal from "../modal/StackModal";
+import { FaGithub } from "react-icons/fa";
+import { RxNotionLogo } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 const HomeSection = () => {
   //intro, stack 모달창 구현 (지역상태관리)
+  const [introModal, setIntroModal] = useState(false);
+  const [stackModal, setStackModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleIntroModal = () => {
+    setIntroModal(!introModal);
+  };
+
+  const handleStackModal = () => {
+    setStackModal(!stackModal);
+  };
 
   return (
     <SectionWrapper id="home">
       <HomeBackground>
         <ImageBox />
         <TextBox style={{ marginLeft: "5px" }}>
-          <div>Introduce</div>
-          <div>Stack</div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <span
-              style={{
-                marginLeft: "10px",
-              }}
-            >
-              Front-End
-            </span>
-            <div>JongYeol, Noh</div>
-          </div>
+          <div onClick={handleIntroModal}>Introduce</div>
+          <div onClick={handleStackModal}>Stack</div>
+          <IconBox>
+            <Data>
+              <a
+                href="https://github.com/Exist95"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaGithub />
+              </a>
+            </Data>
+            <Data>
+              <a
+                href="https://spiritual-ragdoll-604.notion.site/3dcd47febe6144d6bd84928ca07f1b95"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <RxNotionLogo />
+              </a>
+            </Data>
+          </IconBox>
         </TextBox>
       </HomeBackground>
+      {introModal && <IntroModal setIntroModal={setIntroModal} />}
+      {stackModal && <StackModal setStackModal={setStackModal} />}
     </SectionWrapper>
   );
 };
@@ -40,8 +63,6 @@ const HomeBackground = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #fbd7d5;
-  background: linear-gradient(#8f8a8e, #cac2d1, #fad4d2, #fdded7, #fae5d5);
 `;
 
 const TextBox = styled.div`
@@ -57,17 +78,7 @@ const TextBox = styled.div`
   height: 35rem;
   padding-left: 5px;
   margin-right: 10px;
-  > :nth-child(3) {
-    > div {
-      font-size: 3rem;
-      display: flex;
-      justify-content: center;
-      @media ${({ theme }) => theme.height} {
-        font-size: 2rem;
-      }
-    }
-  }
-  > :nth-child(n) {
+  > :nth-child(-n + 2) {
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -75,6 +86,7 @@ const TextBox = styled.div`
       color: white;
     }
   }
+
   span {
     font-size: 2rem;
     display: flex;
@@ -126,6 +138,25 @@ const ImageBox = styled.div`
     width: 20rem;
     height: 20rem;
     font-size: 3rem;
+  }
+`;
+
+const IconBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const Data = styled.div`
+  > a {
+    color: black;
+  }
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+  & > a:hover {
+    color: white;
   }
 `;
 

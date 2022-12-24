@@ -71,16 +71,15 @@ const ContactBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e6e6fa;
   width: 100%;
   height: 100vh;
+  margin: 0 auto;
 `;
 
 const ImageBox = styled.div`
   display: flex;
   width: 35rem;
   height: 35rem;
-  margin: 0px 2rem;
   background-image: url("/images/contactme.png");
   background-size: contain;
   background-position: center center;
@@ -111,7 +110,6 @@ const TheForm = styled.form`
   align-items: center;
   width: 100%;
   height: 100vh;
-  /* phone */
   @media ${({ theme }) => theme.phone} {
     gap: 1.5rem;
     padding: 1.5rem;
@@ -131,23 +129,19 @@ const TextBox = styled.div`
   width: 47rem;
   height: 47rem;
   margin-left: 2rem;
-
   @media ${({ theme }) => theme.laptop} {
     width: 45rem;
     height: 45rem;
   }
-
   @media ${({ theme }) => theme.tablet} {
     width: 40rem;
     height: 40rem;
   }
-
   @media ${({ theme }) => theme.mobile} {
     width: 35rem;
     height: 35rem;
   }
-
-  @media ${({ theme }) => theme.height} {
+  @media ${({ theme }) => theme.height && theme.tablet} {
     font-size: 3rem;
     width: 20rem;
     height: 20rem;

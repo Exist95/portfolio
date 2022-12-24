@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 
-const ProjectItem = ({ project, url }) => {
+const ProjectItem = ({ project, url, id }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
@@ -12,12 +12,10 @@ const ProjectItem = ({ project, url }) => {
         onMouseLeave={() => setIsHovering(false)}
       >
         {isHovering && (
-          <>
+          <HashLink to="/#test">
             <HoverCover />
-            <NavLink to={`/${project.toUpperCase()}`}>
-              <TextBox>Detail</TextBox>
-            </NavLink>
-          </>
+            <TextBox>Detail</TextBox>
+          </HashLink>
         )}
         <Image src={url} alt={project} />
       </ImageWrapper>

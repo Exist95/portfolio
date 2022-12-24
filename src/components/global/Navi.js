@@ -12,7 +12,7 @@ const Navi = () => {
             to="/#home"
             style={{ textDecoration: "none", color: "black" }}
           >
-            <Tag>About_me</Tag>
+            <Tag>About</Tag>
           </HashLink>
         </NaviItem>
         <NaviItem>

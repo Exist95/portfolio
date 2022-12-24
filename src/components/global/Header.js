@@ -8,7 +8,7 @@ const Header = () => {
   };
   return (
     <HeaderContainer>
-      <Heading onClick={goHome}>Noh Jongyeol</Heading>
+      <Heading onClick={goHome}>Jong-Yeol, Noh</Heading>
       <Navi />
     </HeaderContainer>
   );
@@ -17,7 +17,7 @@ const Header = () => {
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 5;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,10 +26,9 @@ const HeaderContainer = styled.header`
   margin: 0 auto;
   width: 100%;
   height: 7rem;
-  font-size: 20px;
+  font-size: 3rem;
   font-weight: 900;
   padding-bottom: 36px;
-  background: linear-gradient(#bcc6dc);
   @media ${({ theme }) => theme.laptop} {
     font-size: 2.5rem;
   }
