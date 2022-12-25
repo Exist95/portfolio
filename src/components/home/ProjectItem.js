@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const ProjectItem = ({ project, url, id }) => {
   const [isHovering, setIsHovering] = useState(false);
-
   return (
     <ProjectBox>
       <ImageWrapper
@@ -12,7 +11,7 @@ const ProjectItem = ({ project, url, id }) => {
         onMouseLeave={() => setIsHovering(false)}
       >
         {isHovering && (
-          <HashLink to="/#test">
+          <HashLink to={`${"/#" + project}`}>
             <HoverCover />
             <TextBox>Detail</TextBox>
           </HashLink>

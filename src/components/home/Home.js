@@ -3,7 +3,9 @@ import styled from "styled-components";
 import ContactSection from "./ContactSection";
 import HomeSection from "./HomeSection";
 import ProjectSection from "./ProjectSection";
-import Test from "../../project/Test";
+import Paldo from "../../project/Paldo";
+import Bok from "../../project/Bok";
+import Port from "../../project/Port";
 
 const Home = () => {
   return (
@@ -11,7 +13,9 @@ const Home = () => {
       <HomeSection />
       <ProjectSection />
       <ContactSection />
-      <Test />
+      <Paldo />
+      <Bok />
+      <Port />
     </MainContainer>
   );
 };

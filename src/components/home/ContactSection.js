@@ -29,7 +29,7 @@ const ContactSection = () => {
       <ContactBackground>
         <ImageBox />
         <TextBox>
-          <Headering>Contact</Headering>
+          <Heading>Contact</Heading>
           <TheForm ref={form} onSubmit={sendEmail}>
             <InputBox>
               <InputValue
@@ -94,13 +94,25 @@ const ImageBox = styled.div`
   }
 `;
 
-const Headering = styled.div`
-  font-size: 4rem;
+const Heading = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 5px solid black;
+  padding: 6rem 3rem 3rem 3rem;
+  font-size: 6rem;
+  font-weight: 900;
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 6rem;
+  }
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 5rem;
+  }
+  @media ${({ theme }) => theme.mobile} {
+    padding: 7rem 1.5rem 1.5rem 1.5rem;
+    font-size: 4rem;
+  }
+  @media ${({ theme }) => theme.phone} {
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+  }
 `;
 
 const TheForm = styled.form`
@@ -113,9 +125,6 @@ const TheForm = styled.form`
   @media ${({ theme }) => theme.phone} {
     gap: 1.5rem;
     padding: 1.5rem;
-  }
-  @media ${({ theme }) => theme.height} {
-    display: none;
   }
 `;
 

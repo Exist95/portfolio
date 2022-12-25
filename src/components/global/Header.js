@@ -29,6 +29,7 @@ const HeaderContainer = styled.header`
   font-size: 3rem;
   font-weight: 900;
   padding-bottom: 36px;
+  background-color: #e6e6fa;
   @media ${({ theme }) => theme.laptop} {
     font-size: 2.5rem;
   }
