@@ -4,24 +4,20 @@ import SectionWrapper from "../global/SectionWrapper";
 import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
+  const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+  const PURBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PURBLIC_KEY).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
     e.target.reset();
   };
   return (

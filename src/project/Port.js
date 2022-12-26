@@ -17,7 +17,6 @@ import {
 } from "./Paldo";
 import { FaGithub } from "react-icons/fa";
 import { Data } from "../components/home/HomeSection";
-import { SlControlPlay } from "react-icons/sl";
 
 const Port = () => {
   const item = [
