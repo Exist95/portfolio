@@ -13,16 +13,20 @@ import { SlControlPlay } from "react-icons/sl";
 const Paldo = () => {
   const item = [
     {
+      id: 91,
+      url: "/images/paldo.png",
+    },
+    {
       id: 100,
-      url: "/images/paldo1.gif",
+      url: "/images/paldo11.gif",
     },
     {
       id: 102,
-      url: "/images/paldo2.gif",
+      url: "/images/paldo22.gif",
     },
     {
       id: 103,
-      url: "/images/paldo3.gif",
+      url: "/images/paldo33.gif",
     },
   ];
   const settings = {

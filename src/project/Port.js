@@ -26,15 +26,15 @@ const Port = () => {
     },
     {
       id: 301,
-      url: "/images/portfolioMain.png",
+      url: "/images/port11.gif",
     },
     {
       id: 302,
-      url: "/images/paldo2.gif",
+      url: "/images/port22.gif",
     },
     {
       id: 303,
-      url: "/images/paldo3.gif",
+      url: "/images/port33.gif",
     },
   ];
   const settings = {
