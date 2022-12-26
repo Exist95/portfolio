@@ -1,54 +1,53 @@
 import React from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import { TiArrowBackOutline } from "react-icons/ti";
+import { HashLink } from "react-router-hash-link";
+import { FaGithub } from "react-icons/fa";
+import { Data } from "../components/home/HomeSection";
+import { SlControlPlay } from "react-icons/sl";
 import SectionWrapper from "../components/global/SectionWrapper";
+import {
+  Contain,
+  ContentBox,
+  ContentText,
+  ContentTitle,
+  Heading,
+  IconBox,
+  Image,
+  Images,
+  ProductImgWrap,
+  StyledSlider,
+  IconSpan,
+} from "./Paldo";
 
 const Bok = () => {
   const item = [
     {
       id: 200,
       url: "/images/bokmango.png",
-      content: "메인 화면입니다.",
     },
     {
       id: 201,
       url: "/images/bok1.gif",
-      content: "OAuth 로그인 및 메인 페이지입니다.",
-    },
-    {
-      id: 202,
-      url: "/images/bok2.gif",
-      content: "게임 페이지입니다.",
     },
     {
       id: 203,
       url: "/images/bok3.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
     {
       id: 204,
       url: "/images/bok4.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
     {
       id: 205,
       url: "/images/bok5.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
     {
       id: 206,
       url: "/images/bok6.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
     {
       id: 207,
       url: "/images/bok7.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
-    },
-    {
-      id: 208,
-      url: "/images/bok8.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
   ];
   const settings = {
@@ -60,137 +59,77 @@ const Bok = () => {
   };
   return (
     <SectionWrapper id="bok">
-      <Heading>새해복망고</Heading>
+      <Heading>
+        새해복망고
+        <div style={{ position: "absolute", left: "10%" }}>
+          <HashLink to="/#project">
+            <IconSpan>
+              <TiArrowBackOutline />
+            </IconSpan>
+          </HashLink>
+        </div>
+      </Heading>
       <ProductImgWrap>
         <StyledSlider {...settings}>
           {item.map((x) => {
             return (
               <Image key={x.id}>
                 <Images src={x.url} />
-                <div>{x.content}</div>
               </Image>
             );
           })}
         </StyledSlider>
+        <Contain>
+          <ContentBox>
+            <ContentTitle>Overview</ContentTitle>
+            <ContentText>
+              부트캠트에서 만든 메인 프로젝트입니다. 트랜드에 따라 모바일
+              퍼스트로 화면을 구성했으며, 프로젝트 기간과 가까운 기념일인 새해를
+              컨셉으로 잡았습니다. 유저들은 자신의 복망고를 여러개 만들 수
+              있으며 카카오톡으로 공유를 하여 지인에게 덕담 복주머니를 받을 수
+              있습니다. Typescript를 처음 프로젝트에 적용해보고 백엔드와의
+              협업을 했다는 것으로 크게 만족한 작품입니다. 백엔드는 AWS의 EC2로
+              배포되었으며 프론트엔드는 Vercel을 이용하여 배포하였습니다.
+            </ContentText>
+          </ContentBox>
+          <ContentBox>
+            <ContentTitle>Feature</ContentTitle>
+            <ContentText>
+              회원가입 페이지, 로그인 페이지, 마이 페이지, 유효성 검사, 로그인,
+              아이디 저장, 비밀번호 찾기, 모달
+            </ContentText>
+          </ContentBox>
+          <ContentBox>
+            <ContentTitle>Skill</ContentTitle>
+            <ContentText>
+              Typescript, React, Tailwind, Recoil, Next.js, axios, ESLint,
+              Prettier
+            </ContentText>
+          </ContentBox>
+          <IconBox>
+            <Data>
+              <a
+                href="https://github.com/codestates-seb/seb40_main_023"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaGithub />
+              </a>
+            </Data>
+            <Data>
+              <a
+                href="https://applemango.vercel.app/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <SlControlPlay />
+              </a>
+            </Data>
+          </IconBox>
+        </Contain>
       </ProductImgWrap>
     </SectionWrapper>
   );
 };
-
-const Heading = styled.h2`
-  display: flex;
-  justify-content: center;
-  padding: 9rem 3rem 2rem 3rem;
-  font-size: 5rem;
-  font-weight: 900;
-  @media ${({ theme }) => theme.laptop} {
-    font-size: 5rem;
-    padding-bottom: 5rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 4rem;
-  }
-  @media ${({ theme }) => theme.mobile} {
-    padding: 10rem 1.5rem 1rem 1.5rem;
-    font-size: 3rem;
-  }
-  @media ${({ theme }) => theme.phone} {
-    padding: 10rem 1.5rem 1rem 1.5rem;
-  }
-`;
-
-const ProductImgWrap = styled.div`
-  position: absolute;
-  left: calc(50% - 40rem);
-  width: 80rem;
-  border-radius: 10px;
-  padding-top: 2%;
-  @media ${({ theme }) => theme.laptop} {
-    left: calc(50% - 30rem);
-    width: 60rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-  }
-  @media ${({ theme }) => theme.mobile} {
-    padding-top: 15%;
-  }
-  @media ${({ theme }) => theme.phone} {
-    left: calc(50% - 20rem);
-    width: 40rem;
-  }
-`;
-
-const Images = styled.img`
-  width: 100%;
-  height: 50rem;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  @media ${({ theme }) => theme.laptop} {
-    height: 40rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-    height: 40rem;
-  }
-  @media ${({ theme }) => theme.phone} {
-    height: 30rem;
-  }
-`;
-
-const Image = styled.div`
-  display: flex;
-  position: relative;
-  width: 100%;
-`;
-
-const StyledSlider = styled(Slider)`
-  .slick-arrow {
-  }
-
-  .slick-prev {
-    left: 0% !important;
-    z-index: 1000;
-    &::before {
-      color: black;
-    }
-  }
-  .slick-next {
-    right: 0% !important;
-    z-index: 1000;
-    &::before {
-      color: black;
-    }
-  }
-  .slick-dots {
-    display: flex;
-    width: 100px;
-    margin: 0;
-    padding: 0;
-    left: 50%;
-    bottom: 5%;
-    transform: translate(-50%, -50%);
-  }
-  .slick-dots li {
-    width: 6px;
-    height: 6px;
-    margin: 0 3.5px;
-  }
-  .slick-dots li button {
-    width: 6px;
-    height: 6px;
-  }
-  .slick-dots li button:before {
-    width: 6px;
-    height: 6px;
-    color: gray;
-  }
-  .slick-dots li.slick-active button:before {
-    color: black !important;
-  }
-  li {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 export default Bok;

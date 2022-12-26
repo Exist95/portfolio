@@ -8,7 +8,6 @@ const Navi = () => {
       <StNavigation>
         <NaviItem>
           <HashLink
-            smooth
             to="/#home"
             style={{ textDecoration: "none", color: "black" }}
           >
@@ -17,7 +16,6 @@ const Navi = () => {
         </NaviItem>
         <NaviItem>
           <HashLink
-            smooth
             to="/#project"
             style={{ textDecoration: "none", color: "black" }}
           >
@@ -26,7 +24,6 @@ const Navi = () => {
         </NaviItem>
         <NaviItem>
           <HashLink
-            smooth
             to="/#contact"
             style={{ textDecoration: "none", color: "black" }}
           >

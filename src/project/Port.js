@@ -1,29 +1,41 @@
 import React from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import { HashLink } from "react-router-hash-link";
 import SectionWrapper from "../components/global/SectionWrapper";
+import { TiArrowBackOutline } from "react-icons/ti";
+import {
+  Contain,
+  ContentBox,
+  ContentText,
+  ContentTitle,
+  Heading,
+  IconBox,
+  Image,
+  Images,
+  ProductImgWrap,
+  StyledSlider,
+  IconSpan,
+} from "./Paldo";
+import { FaGithub } from "react-icons/fa";
+import { Data } from "../components/home/HomeSection";
+import { SlControlPlay } from "react-icons/sl";
 
 const Port = () => {
   const item = [
     {
-      id: 99,
-      url: "/images/paldo.png",
-      content: "메인 화면입니다.",
+      id: 300,
+      url: "/images/portfolioTitle.png",
     },
     {
-      id: 100,
-      url: "/images/paldo1.gif",
-      content: "OAuth 로그인 및 메인 페이지입니다.",
+      id: 301,
+      url: "/images/portfolioMain.png",
     },
     {
-      id: 102,
+      id: 302,
       url: "/images/paldo2.gif",
-      content: "게임 페이지입니다.",
     },
     {
-      id: 103,
+      id: 303,
       url: "/images/paldo3.gif",
-      content: "커뮤니티 페이지 및 랭킹 페이지입니다.",
     },
   ];
   const settings = {
@@ -35,128 +47,63 @@ const Port = () => {
   };
   return (
     <SectionWrapper id="port">
-      <Heading>개인 포트폴리오</Heading>
+      <Heading>
+        개인 포트폴리오
+        <div style={{ position: "absolute", left: "10%" }}>
+          <HashLink to="/#project">
+            <IconSpan>
+              <TiArrowBackOutline />
+            </IconSpan>
+          </HashLink>
+        </div>
+      </Heading>
+
       <ProductImgWrap>
         <StyledSlider {...settings}>
           {item.map((x) => {
             return (
               <Image key={x.id}>
                 <Images src={x.url} />
-                <div>{x.content}</div>
               </Image>
             );
           })}
         </StyledSlider>
+        <Contain>
+          <ContentBox>
+            <ContentTitle>Overview</ContentTitle>
+            <ContentText>
+              부트캠프 종료 후, 이력서와 함께 제출하기 위해 구현한 웹 포트폴리오
+              사이트입니다. Scroll이 없는 것이 특징이며 오로지 HashLink로만
+              이동할 수 있습니다. 그리고 Slick을 사용하여 슬라이드 형식으로
+              프로젝트 이미지를 확인할 수 있게 구성하였습니다.
+            </ContentText>
+          </ContentBox>
+          <ContentBox>
+            <ContentTitle>Feature</ContentTitle>
+            <ContentText>
+              메인(About) 페이지, 프로젝트 페이지, 컨텍 페이지, 각 페이지 모든
+              기능{" "}
+            </ContentText>
+          </ContentBox>
+          <ContentBox>
+            <ContentTitle>Skill</ContentTitle>
+            <ContentText>Javascript, React, Styled-components</ContentText>
+          </ContentBox>
+          <IconBox>
+            <Data>
+              <a
+                href="https://github.com/Exist95/portfolio"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaGithub />
+              </a>
+            </Data>
+          </IconBox>
+        </Contain>
       </ProductImgWrap>
     </SectionWrapper>
   );
 };
-
-const Heading = styled.h2`
-  display: flex;
-  justify-content: center;
-  padding: 9rem 3rem 2rem 3rem;
-  font-size: 5rem;
-  font-weight: 900;
-  @media ${({ theme }) => theme.laptop} {
-    font-size: 5rem;
-    padding-bottom: 5rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 4rem;
-  }
-  @media ${({ theme }) => theme.mobile} {
-    padding: 10rem 1.5rem 1rem 1.5rem;
-    font-size: 3rem;
-  }
-  @media ${({ theme }) => theme.phone} {
-    padding: 10rem 1.5rem 1rem 1.5rem;
-  }
-`;
-
-const ProductImgWrap = styled.div`
-  position: absolute;
-  left: calc(50% - 40rem);
-  width: 80rem;
-  border-radius: 10px;
-  padding-top: 2%;
-  @media ${({ theme }) => theme.laptop} {
-    left: calc(50% - 30rem);
-    width: 60rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-  }
-  @media ${({ theme }) => theme.mobile} {
-    padding-top: 15%;
-  }
-  @media ${({ theme }) => theme.phone} {
-    left: calc(50% - 20rem);
-    width: 40rem;
-  }
-`;
-
-const Images = styled.img`
-  width: 100%;
-  height: 50rem;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  @media ${({ theme }) => theme.laptop} {
-    height: 40rem;
-  }
-  @media ${({ theme }) => theme.tablet} {
-    height: 40rem;
-  }
-  @media ${({ theme }) => theme.phone} {
-    height: 30rem;
-  }
-`;
-
-const Image = styled.div`
-  display: flex;
-  position: relative;
-  width: 100%;
-`;
-
-const StyledSlider = styled(Slider)`
-  .slick-prev {
-    left: 0% !important;
-    z-index: 1000;
-  }
-  .slick-next {
-    right: 0% !important;
-    z-index: 1000;
-  }
-  .slick-dots {
-    display: flex;
-    width: 100px;
-    margin: 0;
-    padding: 0;
-    left: 50%;
-    bottom: 5%;
-    transform: translate(-50%, -50%);
-  }
-  .slick-dots li {
-    width: 6px;
-    height: 6px;
-    margin: 0 3.5px;
-  }
-  .slick-dots li button {
-    width: 6px;
-    height: 6px;
-  }
-  .slick-dots li button:before {
-    width: 6px;
-    height: 6px;
-    color: white;
-  }
-  .slick-dots li.slick-active button:before {
-    color: white !important;
-  }
-  li {
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 export default Port;

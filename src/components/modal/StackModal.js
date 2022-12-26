@@ -7,6 +7,7 @@ const StackModal = ({ setStackModal }) => {
     <ModalBox>
       <ModalSmallBox>
         <ConfirmButtons onClick={() => setStackModal(false)}>X</ConfirmButtons>
+        <StackBox />
       </ModalSmallBox>
     </ModalBox>
   );
@@ -16,9 +17,12 @@ const ModalSmallBox = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
+  width: 420px;
+  height: 450px;
   background-color: white;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 `;
 
 const ConfirmButtons = styled.button`
@@ -41,6 +45,15 @@ const ConfirmButtons = styled.button`
     background-color: #4f46e5;
     cursor: pointer;
   }
+`;
+
+const StackBox = styled.div`
+  width: 400px;
+  height: 430px;
+  margin-top: 10px;
+  background-image: url("/images/stack.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export default StackModal;

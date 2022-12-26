@@ -5,13 +5,11 @@ import IntroModal from "../modal/IntroModal";
 import StackModal from "../modal/StackModal";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
-import { useNavigate } from "react-router-dom";
 
 const HomeSection = () => {
   //intro, stack 모달창 구현 (지역상태관리)
   const [introModal, setIntroModal] = useState(false);
   const [stackModal, setStackModal] = useState(false);
-  const navigate = useNavigate();
 
   const handleIntroModal = () => {
     setIntroModal(!introModal);
@@ -147,7 +145,7 @@ const IconBox = styled.div`
   align-items: center;
 `;
 
-const Data = styled.div`
+export const Data = styled.div`
   > a {
     color: black;
   }

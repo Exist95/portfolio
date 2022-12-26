@@ -4,7 +4,8 @@ import Navi from "./Navi";
 
 const Header = () => {
   const goHome = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
+    //  behavior: "smooth"
   };
   return (
     <HeaderContainer>
@@ -17,7 +18,7 @@ const Header = () => {
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 90;
   display: flex;
   flex-direction: row;
   align-items: center;

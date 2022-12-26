@@ -22,17 +22,12 @@ const ProjectItem = ({ project, url, id }) => {
   );
 };
 
-const ProjectBox = styled.li`
-  width: calc((100% / 2) - 1.5rem);
+const ProjectBox = styled.div`
+  width: 100%;
   position: relative;
-  @media ${({ theme }) => theme.mobile} {
-    width: 100%;
-  }
 `;
 
-const ImageWrapper = styled.div`
-  overflow: hidden;
-`;
+const ImageWrapper = styled.div``;
 
 const HoverCover = styled.div`
   position: absolute;
@@ -60,7 +55,6 @@ const TextBox = styled.div`
   font-size: 4rem;
   font-weight: 900;
   cursor: pointer;
-
   @media ${({ theme }) => theme.tablet} {
     font-size: 3rem;
   }
