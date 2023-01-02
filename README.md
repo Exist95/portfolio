@@ -1,4 +1,4 @@
-# 노종열 포트폴리오
+# 포트폴리오
 
 ![portfolioTitle](https://user-images.githubusercontent.com/96723716/209496862-f977e562-f18c-4fad-980f-e45a1d9737dd.png)
 
