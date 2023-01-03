@@ -11,14 +11,14 @@ const IntroModal = ({ setIntroModal }) => {
           <div>안녕하세요! 웹 프론트엔드 개발자 노종열입니다.</div>
           <br />
           <div>
-            모두가 <Highlight>필요로 하는 개발자</Highlight>는 단순히 코딩을 잘
-            하는 사람이 아닙니다. 따라서
-            <Highlight> 근본적인 문제</Highlight>를 해결하는 인물이 되기 위해
-            착실한 하루를 보내고 있습니다.
+            스스로 <Highlight>목표로 하는 개발자</Highlight>는 단순히 코딩을 잘
+            하는 사람이 아닙니다. 저는
+            <Highlight> 근본적인 문제</Highlight>를 해결하는 인물이 되고자
+            합니다. 따라서 착실한 하루를 보내고 있습니다.
           </div>
           <br />
           <Highlight>동료와 함께하는 것</Highlight>은 늘 새롭고 흥미롭습니다.
-          개인의 경험과 생각을을 듣는 것으로 견문을 넓힐 수 있는 기회가 되기
+          개인의 경험과 생각을 듣는 것으로 견문을 넓힐 수 있는 기회가 되기
           때문입니다.
         </IntroBox>
       </ModalSmallBox>
