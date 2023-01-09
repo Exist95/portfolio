@@ -7,7 +7,15 @@ const StackModal = ({ setStackModal }) => {
     <ModalBox>
       <ModalSmallBox>
         <ConfirmButtons onClick={() => setStackModal(false)}>X</ConfirmButtons>
-        <StackBox />
+        <StackBox>
+          <div style={{ color: "#E14E1D", paddingTop: "50px" }}>HTML5</div>
+          <div style={{ color: "#0277BD" }}>CSS3</div>
+          <div style={{ color: "#F0DB4F" }}>JavaScript</div>
+          <div style={{ color: "#00D8FF" }}>React</div>
+          <div style={{ color: "#764ABC" }}>Redux</div>
+          <div style={{ color: "#E48B80" }}>Styled-Components</div>
+          <div style={{ color: "#F03C2E" }}>Git</div>
+        </StackBox>
       </ModalSmallBox>
     </ModalBox>
   );
@@ -48,12 +56,28 @@ const ConfirmButtons = styled.button`
 `;
 
 const StackBox = styled.div`
-  width: 400px;
-  height: 430px;
-  margin-top: 10px;
-  background-image: url("/images/stack.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  gap: 20px;
+
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 2.5rem;
+  }
+
+  @media ${({ theme }) => theme.mobile} {
+    align-items: center;
+  }
+
+  @media ${({ theme }) => theme.phone} {
+    height: 4rem;
+    font-size: 2rem;
+  }
 `;
 
 export default StackModal;
