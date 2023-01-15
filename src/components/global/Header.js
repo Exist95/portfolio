@@ -4,7 +4,7 @@ import Navi from "./Navi";
 
 const Header = () => {
   const goHome = () => {
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ behavior: "smooth", top: 0 });
     //  behavior: "smooth"
   };
   return (
