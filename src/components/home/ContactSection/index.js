@@ -175,8 +175,6 @@ const inputStyle = css`
   &::placeholder {
     color: gray;
     font-size: 2.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 900;
   }
   @media ${({ theme }) => theme.tablet} {
@@ -218,8 +216,6 @@ const Button = styled.button`
   width: 50%;
   font-size: 2rem;
   margin-top: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   &:hover {
     cursor: pointer;
     color: black;

@@ -43,8 +43,8 @@ export const HomeSectionTextBox = styled.div`
 export const HomeSectionTitle = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  font-style: italic;
 `;
 
 export const HomeSectionIcon = styled.div`
