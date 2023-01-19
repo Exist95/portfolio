@@ -29,10 +29,6 @@ const Bok = () => {
       id: 205,
       url: "/images/bok4.gif",
     },
-    {
-      id: 206,
-      url: "/images/bok5.gif",
-    },
   ];
   const settings = {
     dots: true,
