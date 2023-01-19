@@ -86,6 +86,18 @@ const Bok = () => {
               Prettier
             </S.ContentText>
           </S.ContentBox>
+          <S.ContentBox>
+            <S.ContentTitle>Retrospection</S.ContentTitle>
+            <CommonDataBox style={{ marginTop: "3px" }}>
+              <a
+                href="https://spiritual-ragdoll-604.notion.site/BokMango-Project-1bb55d355fd540e98761ceb7ee334159"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                새해복망고 회고
+              </a>
+            </CommonDataBox>
+          </S.ContentBox>
           <S.IconBox>
             <CommonDataBox>
               <a

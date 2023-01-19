@@ -76,6 +76,18 @@ const Port = () => {
             <S.ContentTitle>Skill</S.ContentTitle>
             <S.ContentText>Javascript, React, Styled-components</S.ContentText>
           </S.ContentBox>
+          <S.ContentBox>
+            <S.ContentTitle>Retrospection</S.ContentTitle>
+            <CommonDataBox style={{ marginTop: "3px" }}>
+              <a
+                href="https://spiritual-ragdoll-604.notion.site/Portfolio-eedc60ed43f4466fb963e6b7c2597c97"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                개인 포트폴리오 회고
+              </a>
+            </CommonDataBox>
+          </S.ContentBox>
           <S.IconBox>
             <CommonDataBox>
               <a

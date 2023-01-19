@@ -81,6 +81,18 @@ const Paldo = () => {
               axios, ESLint, Prettier
             </S.ContentText>
           </S.ContentBox>
+          <S.ContentBox>
+            <S.ContentTitle>Retrospection</S.ContentTitle>
+            <CommonDataBox style={{ marginTop: "3px" }}>
+              <a
+                href="https://spiritual-ragdoll-604.notion.site/Paldo-Games-ddc9f4e32bfc4e88b6169d1b337f04d2"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                팔도게임즈 회고
+              </a>
+            </CommonDataBox>
+          </S.ContentBox>
           <S.IconBox>
             <CommonDataBox>
               <a
