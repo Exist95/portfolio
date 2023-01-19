@@ -10,5 +10,6 @@ const SectionContaioner = styled.section`
   min-height: 100vh;
   color: black;
   scroll-snap-align: start;
+  overflow: hidden;
 `;
 export default SectionWrapper;
