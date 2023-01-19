@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionWrapper from "../../global/SectionWrapper";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
 import * as S from "./style";
 import Stack from "./Stack";
+import Aos from "aos";
 
 const HomeSection = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 3000,
+    });
+  });
+
   return (
     <SectionWrapper id="home">
       <S.HomeSectionContainer>
         <S.HomeSectionTextBox>
-          <S.HomeSectionTitle>
+          <S.HomeSectionTitle data-aos="fade-in">
             <div>안녕하세요</div>
             <div>프론트엔드 개발자</div>
             <div>노종열입니다</div>
           </S.HomeSectionTitle>
           <br />
           <Stack />
-          <S.HomeSectionIcon>
+          <S.HomeSectionIcon
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+          >
             <S.CommonDataBox>
               <a
                 href="https://github.com/Exist95"

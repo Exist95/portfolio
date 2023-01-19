@@ -9,6 +9,7 @@ export const StackTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 5px;
 `;
 
 export const StackContents = styled.div`
